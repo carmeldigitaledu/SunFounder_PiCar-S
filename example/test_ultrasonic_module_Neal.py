@@ -43,6 +43,7 @@ last_angle = 90
 player = "Neal"
 
 def time_to_stop():
+	# type: () -> object
 	if try_count > timeout:
 		return True
 	else:
@@ -50,6 +51,10 @@ def time_to_stop():
 
 
 def initialize():
+    """
+
+    :rtype: object
+    """
     print('initialize')
 
     initial_stop_distance = forward_distance
@@ -70,6 +75,7 @@ def initialize():
             bw.speed(backward_speed)
             time.sleep(1)
 
+    return
 
 def opposite_angle():
 	global last_angle
@@ -79,7 +85,7 @@ def opposite_angle():
 		angle = last_angle - 2* fw.turning_max
 	last_angle = angle
 	return angle
-
+'''
 def start_avoidance():
 
     print('start_avoidance')
@@ -94,7 +100,7 @@ def start_avoidance():
         print("distance: %scm" % distance)
 
         if not time_to_stop(): # only allow to try specific times
-			if distance < back_distance: # too close! Go backwards to avoid collision
+            if distance < back_distance: # too close! Go backwards to avoid collision
 				print( "Too close! Do some gestures and go backward. ")
 				#fw.turn(opposite_angle())
                 #fw.turn_straight()
@@ -116,14 +122,13 @@ def start_avoidance():
 			fw.turn_straight()
 			bw.stop()
             return
-
+'''
 def stop():
 	bw.stop()
 	fw.turn_straight()
 
 if __name__ == '__main__':
-	try:
-		#start_avoidance()
+    try:
         initialize()
-	except KeyboardInterrupt:
-		stop()
+    except KeyboardInterrupt:
+        stop()
