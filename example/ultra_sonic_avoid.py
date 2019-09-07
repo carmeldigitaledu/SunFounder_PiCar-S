@@ -14,6 +14,7 @@
 from SunFounder_Ultrasonic_Avoidance import Ultrasonic_Avoidance
 from picar import front_wheels
 from picar import back_wheels
+from SunFounder_Foundation_Features import Amy_Jasmine_Backwheels
 import time
 import picar
 import random
@@ -24,7 +25,11 @@ picar.setup()
 
 ua = Ultrasonic_Avoidance.Ultrasonic_Avoidance(20)
 fw = front_wheels.Front_Wheels(db='config')
-bw = back_wheels.Back_Wheels(db='config')
+
+#bw_old = back_wheels.Back_Wheels(db='config')
+
+bw = Amy_Jasmine_Backwheels()
+
 fw.turning_max = 45
 
 forward_speed = 70
@@ -71,31 +76,30 @@ def start_avoidance():
 			if distance < back_distance: # backward
 				print( "backward")
 				fw.turn(opposite_angle())
-				# flip due to installation error
-				bw.forward()
-				bw.speed = backward_speed
+				bw.backward()
+				bw.speed(backward_speed)
 				time.sleep(1)
 				fw.turn(opposite_angle())
-				bw.backward() #flit
+				bw.forward()
 				time.sleep(1)
 			elif distance < turn_distance: # turn
 				print("turn")
 				fw.turn(rand_dir())
-				bw.backward() #flip
-				bw.speed = forward_speed
+				bw.forward()
+				bw.speed(forward_speed)
 				time.sleep(1)
 			else:
 				fw.turn_straight()
-				bw.backward() #flip
-				bw.speed = forward_speed
+				bw.forward()
+				bw.speed(forward_speed)
 
 		else:						# forward
 			fw.turn_straight()
 			if count > timeout:  # timeout, stop;
 				bw.stop()
 			else:
-				bw.forward() #flip
-				bw.speed = forward_speed
+				bw.backward()
+				bw.speed(forward_speed)
 				count += 1
 
 def stop():
