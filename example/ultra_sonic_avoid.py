@@ -26,9 +26,9 @@ picar.setup()
 ua = Ultrasonic_Avoidance.Ultrasonic_Avoidance(20)
 fw = front_wheels.Front_Wheels(db='config')
 
-#bw_old = back_wheels.Back_Wheels(db='config')
+#bw = back_wheels.Back_Wheels(db='config')
 
-bw = Amy_Jasmine_Backwheels()
+bw = Amy_Jasmine_Backwheels.Amy_Jasmine_Backwheels()
 
 fw.turning_max = 45
 

@@ -15,9 +15,9 @@ class Amy_Jasmine_Backwheels(object):
         self.bw = back_wheels.Back_Wheels(db='config')
 
     def forward(self):
-        self.bw.backword()
+        self.bw.backward()
 
-    def backword(self):
+    def backward(self):
         self.bw.forward()
 
     def speed(self, speed):
