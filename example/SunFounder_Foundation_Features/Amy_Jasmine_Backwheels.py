@@ -3,7 +3,7 @@
 **********************************************************************
 * Filename    : Amy_Jasmine_Backwheels.py
 * Description : Special backwheel to fix installation error
-* Author      : Amy / Jasmine
+* Author      : Neal Chen
 * Update      : 2019-09-05    New release
 **********************************************************************
 '''
@@ -24,4 +24,8 @@ class Amy_Jasmine_Backwheels(object):
         self.bw.speed = speed
 
     def stop(self):
+        """
+
+        :rtype: object
+        """
         self.bw.stop()
