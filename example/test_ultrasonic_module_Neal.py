@@ -30,10 +30,10 @@ bw = Amy_Jasmine_Backwheels.Amy_Jasmine_Backwheels()
 
 fw.turning_max = 45
 
-forward_speed = 70
-backward_speed = 70
+forward_speed = 100
+backward_speed = 100
 
-back_distance = 20
+back_distance = 30
 forward_distance = 40
 
 timeout = 2
