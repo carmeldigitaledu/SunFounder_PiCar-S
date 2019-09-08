@@ -33,8 +33,8 @@ fw.turning_max = 45
 forward_speed = 30
 backward_speed = 30
 
-back_distance = 20
-forward_distance = 40
+back_distance = 40
+forward_distance = 80
 
 timeout = 200
 
