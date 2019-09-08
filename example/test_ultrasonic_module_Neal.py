@@ -33,10 +33,10 @@ fw.turning_max = 45
 forward_speed = 100
 backward_speed = 100
 
-back_distance = 30
+back_distance = 20
 forward_distance = 40
 
-timeout = 2
+timeout = 3
 
 player = "Neal"
 
@@ -82,12 +82,12 @@ def start_avoidance():
                 #fw.trun_straight()
                 bw.backward()
                 bw.speed(backward_speed)
-                time.sleep(0.5)
+                time.sleep(1)
             elif distance >= forward_distance: # too far away. Go forward to play again
                 print("Too far away. Go forward and play again. ")
                 bw.forward()
                 bw.speed(forward_speed)
-                time.sleep(0.5)
+                time.sleep(1)
         else:						#  timeout stop
             print('Time is up. Game over. Bye Neal!')
             fw.turn_straight()
