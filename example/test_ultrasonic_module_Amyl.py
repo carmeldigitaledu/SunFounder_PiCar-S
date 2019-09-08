@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 '''
 **********************************************************************
-* Filename    : Amy_Jasmine_Backwheels.py
+* Filename    : test_ultrasonic_module_Amy.py
 * Description : Special backwheel to fix installation error
-* Author      : Neal Chen
+* Author      : amy chen
 * Update      : 2019-09-05    New release
 **********************************************************************
 '''
@@ -33,12 +33,10 @@ fw.turning_max = 45
 forward_speed = 30
 backward_speed = 30
 
-back_distance = 20
-forward_distance = 80
+back_distance = 40
+forward_distance = 100
 
-timeout = 200
-
-player = "Neal"
+timeout = 250
 
 
 def initialize():
@@ -85,8 +83,9 @@ def start_avoidance():
                 bw.speed(forward_speed)
                 time.sleep(1)
         else:						#  timeout stop
-            print('Time is up. Game over. Bye Neal!')
-            fw.turn_straight()
+            print('Time is up. Game over. Burnt cheese took over the world and the great hero Jasmine has failed to save the world from Amy and her crazy minions. Too bad so sad')
+            fw.turn_left()
+            fw.turn_right()
             bw.stop()
             return
 
