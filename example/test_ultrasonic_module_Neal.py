@@ -36,7 +36,7 @@ backward_speed = 100
 back_distance = 20
 forward_distance = 40
 
-timeout = 3
+timeout = 200
 
 player = "Neal"
 
