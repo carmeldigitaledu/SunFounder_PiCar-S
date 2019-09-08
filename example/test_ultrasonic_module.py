@@ -9,7 +9,7 @@ def main():
 	status = UA.less_than(threshold)
 	if distance != -1:
 		print('distance', distance, 'cm')
-		time.sleep(0.2)
+		time.sleep(1)
 	else:
 		print(False)
 	if status == 1:
