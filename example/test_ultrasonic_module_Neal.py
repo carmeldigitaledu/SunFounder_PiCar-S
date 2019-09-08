@@ -47,8 +47,6 @@ def initialize():
 
     initial_stop_distance = forward_distance
 
-    fw.turn_straight()
-
     while True:
         distance = ua.get_distance()
         print("distance: %scm" % distance)
