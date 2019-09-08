@@ -33,10 +33,10 @@ fw.turning_max = 45
 forward_speed = 70
 backward_speed = 70
 
-back_distance = 10
+back_distance = 20
 forward_distance = 40
 
-timeout = 10
+timeout = 3
 try_count = 0
 last_angle = 90
 
@@ -51,10 +51,7 @@ def time_to_stop():
 
 
 def initialize():
-    """
 
-    :rtype: object
-    """
     print('initialize')
 
     initial_stop_distance = forward_distance
@@ -80,7 +77,7 @@ def opposite_angle():
 		angle = last_angle - 2* fw.turning_max
 	last_angle = angle
 	return angle
-'''
+
 def start_avoidance():
 
     print('start_avoidance')
@@ -109,21 +106,19 @@ def start_avoidance():
 				bw.forward()
 				bw.speed(forward_speed)
 				time.sleep(1)
-			else:
-                fw.turn_straight()
-                bw.stop()
 		else:						#  timeout stop
 			print('Time is up. Game over. Bye Neal!')
 			fw.turn_straight()
 			bw.stop()
             return
-'''
+
 def stop():
 	bw.stop()
 	fw.turn_straight()
 
 if __name__ == '__main__':
     try:
-        initialize()
+        #initialize()
+        start_avoidance()
     except KeyboardInterrupt:
         stop()
