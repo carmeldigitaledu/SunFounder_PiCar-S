@@ -66,7 +66,7 @@ def initialize():
         if distance == initial_stop_distance: # Right a initial position
             bw.stop()
             return
-        elif distance < initial_stop_distance: #initial position in far left, go forward
+        elif distance > initial_stop_distance: #initial position in far left, go forward
             bw.forward()
             bw.speed(forward_speed)
             time.sleep(1)
@@ -75,7 +75,6 @@ def initialize():
             bw.speed(backward_speed)
             time.sleep(1)
 
-    return
 
 def opposite_angle():
 	global last_angle
