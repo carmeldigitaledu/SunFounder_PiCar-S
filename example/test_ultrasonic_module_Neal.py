@@ -63,13 +63,9 @@ def initialize():
         distance = ua.get_distance()
         print("distance: %scm" % distance)
 
-        if distance == initial_stop_distance: # Right a initial position
+        if distance > initial_stop_distance: # Outside of forward distance, good enough for initialization
             bw.stop()
             return
-        elif distance > initial_stop_distance: #initial position in far left, go forward
-            bw.forward()
-            bw.speed(forward_speed)
-            time.sleep(1)
         else: # initial position in right, go backward
             bw.backward()
             bw.speed(backward_speed)
