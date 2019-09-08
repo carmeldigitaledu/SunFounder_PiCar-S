@@ -57,7 +57,7 @@ def initialize():
         else: # initial position in right, go backward
             bw.backward()
             bw.speed(backward_speed)
-            time.sleep(1)
+            time.sleep(5)
 
 
 def start_avoidance():
@@ -76,10 +76,6 @@ def start_avoidance():
         if count < timeout: # only allow to try specific times
             if distance < back_distance: # too close! Go backwards to avoid collision
                 print( "Too close! Do some gestures and go backward. ")
-                #fw.turn(opposite_angle())
-                #fw.turn_straight()
-                #fw.turn(opposite_angle())
-                #fw.trun_straight()
                 bw.backward()
                 bw.speed(backward_speed)
                 time.sleep(1)
