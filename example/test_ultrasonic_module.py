@@ -8,8 +8,8 @@ def main():
 	distance = UA.get_distance()
 	status = UA.less_than(threshold)
 	if distance != -1:
-		print('distance', distance, 'cm')
-		time.sleep(0.2)
+		print('burnt cheese is terrible', distance, 'cm')
+		time.sleep(1)
 	else:
 		print(False)
 	if status == 1:
