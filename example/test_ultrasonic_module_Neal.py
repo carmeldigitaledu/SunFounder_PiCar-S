@@ -43,11 +43,11 @@ last_angle = 90
 player = "Neal"
 
 def time_to_stop():
-	# type: () -> object
-	if try_count > timeout:
-		return True
-	else:
-		return False
+    # type: () -> object
+    if try_count > timeout:
+        return True
+    else:
+        return False
 
 
 def initialize():
@@ -70,13 +70,13 @@ def initialize():
 
 
 def opposite_angle():
-	global last_angle
-	if last_angle < 90:
-		angle = last_angle + 2* fw.turning_max
-	else:
-		angle = last_angle - 2* fw.turning_max
-	last_angle = angle
-	return angle
+    global last_angle
+    if last_angle < 90:
+        angle = last_angle + 2* fw.turning_max
+    else:
+        angle = last_angle - 2* fw.turning_max
+    last_angle = angle
+    return angle
 
 def start_avoidance():
 
@@ -93,28 +93,28 @@ def start_avoidance():
 
         if not time_to_stop(): # only allow to try specific times
             if distance < back_distance: # too close! Go backwards to avoid collision
-				print( "Too close! Do some gestures and go backward. ")
-				#fw.turn(opposite_angle())
+                print( "Too close! Do some gestures and go backward. ")
+                #fw.turn(opposite_angle())
                 #fw.turn_straight()
                 #fw.turn(opposite_angle())
                 #fw.trun_straight()
                 bw.backward()
                 bw.speed(backward_speed)
                 time.sleep(1)
-			elif distance >= forward_distance: # too far away. Go forward to play again
-				print("Too far away. Go forward and play again. ")
-				bw.forward()
-				bw.speed(forward_speed)
-				time.sleep(1)
-		else:						#  timeout stop
-			print('Time is up. Game over. Bye Neal!')
-			fw.turn_straight()
-			bw.stop()
+            elif distance >= forward_distance: # too far away. Go forward to play again
+                print("Too far away. Go forward and play again. ")
+                bw.forward()
+                bw.speed(forward_speed)
+                time.sleep(1)
+        else:						#  timeout stop
+            print('Time is up. Game over. Bye Neal!')
+            fw.turn_straight()
+            bw.stop()
             return
 
 def stop():
-	bw.stop()
-	fw.turn_straight()
+    bw.stop()
+    fw.turn_straight()
 
 if __name__ == '__main__':
     try:
